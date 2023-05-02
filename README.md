@@ -173,15 +173,40 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
 
 
 ## STM 32 CUBE PROGRAM :
+#include "main.h"
+#include "lcd.h"
+
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+int main(void)
+{
+  HAL_Init();
+  SystemClock_Config();
+  MX_GPIO_Init();
+ 
+  Lcd_PortType ports[] ={GPIOA,GPIOA,GPIOA,GPIOA};
+  Lcd_PinType pins[]={GPIO_PIN_3,GPIO_PIN_2,GPIO_PIN_1,GPIO_PIN_0};
+  Lcd_HandleTypeDef lcd;
+ 
+  lcd = Lcd_create(ports,pins,GPIOB,GPIO_PIN_0,GPIOB,GPIO_PIN_1,LCD_4_BIT_MODE);
+  Lcd_cursor(&lcd,0,1);
+  Lcd_string(&lcd, "DEPT-AIML");
+
+  while (1)
+  {
+	  Lcd_cursor(&lcd,1,1);
+	  Lcd_string(&lcd,"AUGUSTINE");
+  }
+}
 
 
 
 
 ## Output screen shots of proteus  :
- 
- 
+![WhatsApp Image 2023-05-02 at 11 29 53](https://user-images.githubusercontent.com/119404460/235592087-36f46545-14d6-4d3d-bf52-2c6166d81e23.jpg)
+
  ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
- 
+ ![Screenshot 2023-05-02 113251](https://user-images.githubusercontent.com/119404460/235592132-c90ef860-cecf-4524-ad9e-bea61ed65c65.png)
  
 ## Result :
 Interfacing a digital output and digital input  with ARM microcontroller are simulated in proteus and the results are verified.
