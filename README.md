@@ -173,6 +173,7 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
 
 
 ## STM 32 CUBE PROGRAM :
+```
 #include "main.h"
 #include "lcd.h"
 
@@ -200,7 +201,7 @@ int main(void)
 }
 
 
-
+```
 
 ## Output screen shots of proteus  :
 ![WhatsApp Image 2023-05-02 at 11 29 53](https://user-images.githubusercontent.com/119404460/235592087-36f46545-14d6-4d3d-bf52-2c6166d81e23.jpg)
